@@ -110,8 +110,15 @@
                 }).then(() => tg.close()).catch(() => tg.close());
             } else {
                 // Fallback for primary host running via direct text keyboard structures
-                tg.sendData(JSON.stringify(payload));
-                tg.close();
+               const API = "https://YOUR-RENDER-ADDRESS.onrender.com/api/order";
+const sid = new URLSearchParams(location.search).get("session_id");
+fetch(API, {
+    method: "POST",
+    headers: {"Content-Type": "application/json"},
+    body: JSON.stringify({ session_id: sid, initData: tg.initData, items: payload.items })
+})
+.then(r => { if (!r.ok) throw new Error(); tg.close(); })
+.catch(() => tg.showAlert("Xatolik, qayta urinib ko'ring"));
             }
         });
     </script>
