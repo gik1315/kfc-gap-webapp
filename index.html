@@ -9,31 +9,54 @@
             --bg-color: #111113;
             --card-bg: #1a1a1e;
             --text-main: #ffffff;
+            --muted: #a0a0aa;
+            --line: #2a2a30;
             --kfc-red: #e41216;
             --kfc-red-hover: #b30e11;
         }
-        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: var(--bg-color); margin: 0; padding: 16px; color: var(--text-main); }
-        .brand-header { text-align: center; padding: 20px 0; margin-bottom: 24px; }
+        [hidden] { display: none !important; }
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: var(--bg-color); margin: 0; padding: 16px 16px 130px; color: var(--text-main); }
+        .brand-header { text-align: center; padding: 16px 0; margin-bottom: 16px; }
         .brand-header h1 { font-size: 26px; font-weight: 900; margin: 0; text-transform: uppercase; letter-spacing: 1.5px; }
         .brand-header span { color: var(--kfc-red); }
-        .menu-container { display: flex; flex-direction: column; gap: 16px; margin-bottom: 24px; }
-        .menu-card { background: var(--card-bg); padding: 20px; border-radius: 18px; display: flex; justify-content: space-between; align-items: center; border: 1px solid #2a2a30; }
+        .menu-container { display: flex; flex-direction: column; gap: 14px; margin-bottom: 20px; }
+        .menu-card { background: var(--card-bg); padding: 18px; border-radius: 18px; display: flex; justify-content: space-between; align-items: center; border: 1px solid var(--line); }
         .item-details { display: flex; flex-direction: column; gap: 6px; }
-        .item-title { font-size: 19px; font-weight: 800; }
+        .item-title { font-size: 18px; font-weight: 800; }
         .item-price { font-size: 16px; font-weight: 700; color: var(--kfc-red); }
-        .add-button { background: var(--kfc-red); color: #fff; border: none; padding: 14px 24px; border-radius: 30px; font-size: 16px; font-weight: 800; cursor: pointer; }
-        .add-button:active { background: var(--kfc-red-hover); }
-        .board { background: var(--card-bg); border: 1px solid #2a2a30; border-radius: 18px; padding: 16px; margin-bottom: 120px; }
-        .board h2 { font-size: 18px; margin: 0 0 8px; }
-        .person { padding: 10px 0; border-top: 1px solid #2a2a30; }
+        .qty { display: flex; align-items: center; gap: 12px; }
+        .qbtn { width: 46px; height: 46px; border-radius: 50%; border: none; font-size: 24px; font-weight: 900; color: #fff; cursor: pointer; }
+        .qbtn.plus { background: var(--kfc-red); }
+        .qbtn.plus:active { background: var(--kfc-red-hover); }
+        .qbtn.minus { background: #3a3a42; }
+        .qbtn:disabled { opacity: 0.35; }
+        .qnum { min-width: 22px; text-align: center; font-size: 20px; font-weight: 800; }
+        .box { background: var(--card-bg); border: 1px solid var(--line); border-radius: 18px; padding: 16px; margin-bottom: 16px; }
+        .box h2 { font-size: 18px; margin: 0 0 8px; }
+        .person { padding: 10px 0; border-top: 1px solid var(--line); }
         .person-name { font-weight: 800; display: flex; justify-content: space-between; gap: 8px; }
-        .person-items { font-size: 14px; color: #a0a0aa; margin-top: 4px; }
         .person.me .person-name { color: var(--kfc-red); }
-        .board-total { margin-top: 8px; padding-top: 12px; border-top: 1px solid #2a2a30; font-weight: 900; display: flex; justify-content: space-between; }
-        .empty { color: #a0a0aa; padding: 8px 0; }
-        .closed-banner { background: #2a1a1a; border: 1px solid var(--kfc-red); border-radius: 12px; padding: 10px; margin: 8px 0; font-weight: 700; }
-        .sticky-status { position: fixed; bottom: 0; left: 0; right: 0; background: #111113; padding: 20px 16px; text-align: center; }
-        .status-pill { background: var(--card-bg); border: 1px solid #2a2a30; padding: 14px; border-radius: 14px; font-size: 16px; font-weight: 700; }
+        .person-chip { font-size: 13px; color: var(--muted); margin-top: 2px; }
+        .person-items { font-size: 14px; color: var(--muted); margin-top: 4px; }
+        .total-row { margin-top: 8px; padding-top: 12px; border-top: 1px solid var(--line); font-weight: 900; display: flex; justify-content: space-between; }
+        .empty { color: var(--muted); padding: 8px 0; }
+        .notice { background: #2a1a1a; border: 1px solid var(--kfc-red); border-radius: 12px; padding: 12px; margin-bottom: 16px; font-weight: 700; }
+        .host-panel { background: #1d2a1d; border: 1px solid #3c7a3c; border-radius: 18px; padding: 16px; margin-bottom: 16px; }
+        .host-panel h2 { margin: 0 0 8px; font-size: 18px; }
+        .host-panel p { color: var(--muted); font-size: 14px; margin: 6px 0; }
+        .host-panel input { width: 100%; box-sizing: border-box; padding: 14px; border-radius: 12px; border: 1px solid var(--line); background: #111113; color: #fff; font-size: 17px; }
+        .amount { font-size: 30px; font-weight: 900; margin: 6px 0 10px; }
+        .card-label { color: var(--muted); font-size: 14px; }
+        .card-num { font-size: 22px; font-weight: 800; letter-spacing: 1px; margin: 4px 0 8px; word-break: break-all; }
+        .ghost { background: #3a3a42; color: #fff; border: none; padding: 10px 16px; border-radius: 20px; font-weight: 700; margin-bottom: 12px; }
+        .pay-row { display: flex; flex-direction: column; gap: 10px; }
+        .pay-btn { background: #26262c; color: #fff; border: 2px solid var(--line); padding: 16px; border-radius: 14px; font-size: 17px; font-weight: 800; }
+        .pay-btn.sel { border-color: var(--kfc-red); background: #2b1517; }
+        .confirm-btn { margin-top: 8px; background: #2e7d32; color: #fff; border: none; padding: 10px 16px; border-radius: 20px; font-weight: 800; }
+        .hint { color: var(--muted); font-size: 14px; margin-top: 10px; }
+        .ok { font-weight: 800; color: #6fdc7a; }
+        .sticky-status { position: fixed; bottom: 0; left: 0; right: 0; background: #111113; padding: 14px 16px 78px; text-align: center; pointer-events: none; }
+        .status-pill { background: var(--card-bg); border: 1px solid var(--line); padding: 14px; border-radius: 14px; font-size: 16px; font-weight: 700; }
     </style>
 </head>
 <body>
@@ -42,37 +65,28 @@
         <h1>KFC <span>GAP</span> MENU</h1>
     </div>
 
-    <div class="menu-container" id="menu">
-        <div class="menu-card">
-            <div class="item-details">
-                <div class="item-title">Spicy Wings (3 pcs)</div>
-                <div class="item-price">25,000 UZS</div>
-            </div>
-            <button class="add-button" onclick="registerItem('Spicy Wings (3 pcs)', 25000)">+ Qo'shish</button>
-        </div>
-        <div class="menu-card">
-            <div class="item-details">
-                <div class="item-title">Original Twister</div>
-                <div class="item-price">28,000 UZS</div>
-            </div>
-            <button class="add-button" onclick="registerItem('Original Twister', 28000)">+ Qo'shish</button>
-        </div>
-        <div class="menu-card">
-            <div class="item-details">
-                <div class="item-title">Boxmaster Spicy</div>
-                <div class="item-price">39,000 UZS</div>
-            </div>
-            <button class="add-button" onclick="registerItem('Boxmaster Spicy', 39000)">+ Qo'shish</button>
-        </div>
+    <div class="notice" id="msg" hidden></div>
+
+    <div class="menu-container" id="menu" hidden></div>
+
+    <div class="host-panel" id="host-panel" hidden>
+        <h2>🎉 Hamma tayyor!</h2>
+        <p>To'lov uchun karta raqamingizni yozing (ixtiyoriy). Bo'sh qoldirsangiz, faqat naqd to'lov bo'ladi.</p>
+        <input id="card-input" type="text" inputmode="numeric" placeholder="8600 1234 5678 9012" maxlength="30">
+        <p>Pastdagi «To'lovga o'tish» tugmasini bosing.</p>
     </div>
 
-    <div class="board" id="board">
-        <h2>👥 Guruh buyurtmalari</h2>
+    <div class="box" id="pay-box" hidden></div>
+
+    <div class="box" id="people-box">
+        <h2>👥 Ishtirokchilar</h2>
         <div class="empty">Yuklanmoqda…</div>
     </div>
 
+    <div class="box" id="cart-box" hidden></div>
+
     <div class="sticky-status">
-        <div class="status-pill" id="status-display">Savat bo'sh: <strong>0 taom</strong></div>
+        <div class="status-pill" id="status-display">Yuklanmoqda…</div>
     </div>
 
     <script>
@@ -82,109 +96,254 @@
 
         const BASE = "https://kfc-bot-4l1y.onrender.com";
         const sessionId = new URLSearchParams(window.location.search).get('session_id');
-        const myId = tg.initDataUnsafe.user ? tg.initDataUnsafe.user.id : null;
 
-        let cart = [];
-        let sending = false;
-        let closed = false;
-        let loadedOwn = false;
+        const MENU = [
+            { name: "Spicy Wings (3 pcs)", price: 25000 },
+            { name: "Original Twister", price: 28000 },
+            { name: "Boxmaster Spicy", price: 39000 }
+        ];
 
-        function esc(s) {
-            return String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+        let counts = MENU.map(() => 0);
+        let state = null;
+        let loaded = false;
+        let seq = 0;
+        let mainMode = null;
+        let debounce = null;
+
+        const fmt = n => n.toLocaleString();
+        const esc = s => String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+
+        function cartItems() {
+            const items = [];
+            MENU.forEach((m, i) => { for (let k = 0; k < counts[i]; k++) items.push({ name: m.name, price: m.price }); });
+            return items;
+        }
+        function cartCount() { return counts.reduce((a, b) => a + b, 0); }
+        function cartTotal() { return counts.reduce((s, c, i) => s + c * MENU[i].price, 0); }
+        function personTotal(p) { return p.items.reduce((s, i) => s + i.price, 0); }
+        function itemsText(items) {
+            const c = {};
+            items.forEach(i => c[i.name] = (c[i.name] || 0) + 1);
+            return Object.entries(c).map(([n, q]) => `${esc(n)} × ${q}`).join(', ');
+        }
+        function getMe() { return state ? state.people.find(p => p.uid === state.me) : null; }
+
+        function loadCounts(data) {
+            const me = data.people.find(p => p.uid === data.me);
+            counts = MENU.map(() => 0);
+            if (me) me.items.forEach(it => {
+                const i = MENU.findIndex(m => m.name === it.name);
+                if (i >= 0) counts[i]++;
+            });
         }
 
-        function updateCartUI() {
-            const total = cart.reduce((sum, i) => sum + i.price, 0);
-            document.getElementById('status-display').innerHTML = cart.length
-                ? `Tanlandi: <strong>${cart.length} taom</strong> (${total.toLocaleString()} UZS)`
-                : `Savat bo'sh: <strong>0 taom</strong>`;
-            if (cart.length && !closed) {
-                tg.MainButton.text = `Savatni Tasdiqlash (${total.toLocaleString()} UZS)`;
-                tg.MainButton.show();
-            } else {
-                tg.MainButton.hide();
+        function canEdit() {
+            if (!state || state.status !== 'open') return false;
+            const me = getMe();
+            return !!me && !me.done;
+        }
+
+        function change(i, d) {
+            if (!canEdit()) return;
+            counts[i] = Math.max(0, counts[i] + d);
+            updateUI();
+            clearTimeout(debounce);
+            debounce = setTimeout(() => sync(), 300);
+        }
+
+        function renderMenu() {
+            const box = document.getElementById('menu');
+            const editable = canEdit();
+            box.hidden = !editable;
+            if (!editable) return;
+            box.innerHTML = MENU.map((m, i) => `
+                <div class="menu-card">
+                    <div class="item-details">
+                        <div class="item-title">${esc(m.name)}</div>
+                        <div class="item-price">${fmt(m.price)} UZS</div>
+                    </div>
+                    <div class="qty">
+                        <button class="qbtn minus" onclick="change(${i}, -1)" ${counts[i] ? '' : 'disabled'}>−</button>
+                        <span class="qnum">${counts[i]}</span>
+                        <button class="qbtn plus" onclick="change(${i}, 1)">+</button>
+                    </div>
+                </div>`).join('');
+        }
+
+        function chip(p, open) {
+            if (open) {
+                if (p.done) return "✅ Tayyor";
+                if (p.items.length) return "✍️ Tanlayapti…";
+                return "👀 Menyuga qarayapti";
             }
+            if (p.paid) return p.method === 'host' ? "✅ Tashkilotchi" : "✅ To'landi";
+            if (p.method === 'card') return "💳 Karta — tasdiq kutilmoqda";
+            if (p.method === 'cash') return "💵 Naqd — tasdiq kutilmoqda";
+            return "⏳ To'lamagan";
         }
 
-        function registerItem(name, price) {
-            if (closed) { tg.showAlert("Buyurtma yopilgan"); return; }
-            cart.push({ name, price });
-            updateCartUI();
-        }
-
-        function renderBoard(data) {
-            closed = data.status !== 'open';
-            let h = `<h2>👥 Guruh buyurtmalari</h2>`;
-            if (closed) h += `<div class="closed-banner">🔒 Buyurtma yopilgan — to'lov bosqichi</div>`;
-            if (!data.orders.length) h += `<div class="empty">Hali hech kim tanlamadi…</div>`;
+        function renderPeople(open, isHost) {
+            let h = `<h2>👥 Ishtirokchilar</h2>`;
             let total = 0;
-            data.orders.forEach(o => {
-                const sub = o.items.reduce((s, i) => s + i.price, 0);
+            if (!state.people.length) h += `<div class="empty">Hali hech kim yo'q…</div>`;
+            state.people.forEach(p => {
+                const sub = personTotal(p);
                 total += sub;
-                const counts = {};
-                o.items.forEach(i => counts[i.name] = (counts[i.name] || 0) + 1);
-                const list = Object.entries(counts).map(([n, q]) => `${esc(n)} × ${q}`).join(', ');
-                const me = myId && o.uid === myId;
-                const mark = closed ? (o.paid ? ' ✅' : ' ⏳') : '';
+                const me = p.uid === state.me;
+                const confirmBtn = (!open && isHost && !p.paid)
+                    ? `<div><button class="confirm-btn" onclick="confirmPay(${p.uid})">✅ Qabul qildim</button></div>` : '';
                 h += `<div class="person ${me ? 'me' : ''}">
-                        <div class="person-name"><span>${esc(o.name)}${me ? ' (siz)' : ''}${mark}</span><span>${sub.toLocaleString()} UZS</span></div>
-                        <div class="person-items">${list}</div>
+                        <div class="person-name"><span>${esc(p.name)}${me ? ' (siz)' : ''}</span><span>${fmt(sub)} UZS</span></div>
+                        <div class="person-chip">${chip(p, open)}</div>
+                        ${p.items.length ? `<div class="person-items">${itemsText(p.items)}</div>` : ''}
+                        ${confirmBtn}
                       </div>`;
             });
-            if (data.orders.length) h += `<div class="board-total"><span>Jami</span><span>${total.toLocaleString()} UZS</span></div>`;
-            document.getElementById('board').innerHTML = h;
-
-            if (!loadedOwn) {
-                loadedOwn = true;
-                const mine = data.orders.find(o => myId && o.uid === myId);
-                if (mine && !cart.length) cart = mine.items.slice();
-            }
-            updateCartUI();
+            if (state.people.length) h += `<div class="total-row"><span>Jami</span><span>${fmt(total)} UZS</span></div>`;
+            document.getElementById('people-box').innerHTML = h;
         }
 
-        async function loadBoard() {
-            const box = document.getElementById('board');
-            try {
-                const r = await fetch(`${BASE}/api/session?session_id=${encodeURIComponent(sessionId)}`);
-                if (r.status === 404) {
-                    box.innerHTML = `<h2>👥 Guruh buyurtmalari</h2><div class="empty">Sessiya topilmadi. Botda yangi gap boshlang.</div>`;
-                    return;
+        function renderPayBox(me) {
+            const box = document.getElementById('pay-box');
+            const cartBox = document.getElementById('cart-box');
+            if (state.status !== 'payment') { box.hidden = true; cartBox.hidden = true; return; }
+            box.hidden = false;
+            cartBox.hidden = false;
+
+            let h = `<h2>💳 To'lov</h2>`;
+            if (state.people.length && state.people.every(p => p.paid)) {
+                h += `<div class="ok">🎉 Hamma to'ladi!</div>`;
+            }
+            if (!me) {
+                h += `<div class="empty">Buyurtma yopilgan. Siz bu gapda qatnashmadingiz.</div>`;
+            } else {
+                h += `<div class="amount">${fmt(personTotal(me))} UZS</div>`;
+                if (me.paid) {
+                    h += `<div class="ok">✅ To'landi — rahmat!</div>`;
+                } else {
+                    if (state.card) {
+                        h += `<div class="card-label">Karta (${esc(state.host_name)}):</div>
+                              <div class="card-num">${esc(state.card)}</div>
+                              <button class="ghost" onclick="copyCard()">📋 Nusxalash</button>`;
+                    }
+                    h += `<div class="pay-row">`;
+                    if (state.card) h += `<button class="pay-btn ${me.method === 'card' ? 'sel' : ''}" onclick="payMethod('card')">💳 Karta bilan to'ladim</button>`;
+                    h += `<button class="pay-btn ${me.method === 'cash' ? 'sel' : ''}" onclick="payMethod('cash')">💵 Naqd to'layman</button></div>`;
+                    if (me.method) h += `<div class="hint">Tanlandi. Tashkilotchi pulni olgach tasdiqlaydi.</div>`;
                 }
+            }
+            box.innerHTML = h;
+
+            const master = {};
+            let total = 0;
+            state.people.forEach(p => p.items.forEach(it => {
+                const m = master[it.name] || (master[it.name] = { qty: 0, sum: 0 });
+                m.qty++; m.sum += it.price; total += it.price;
+            }));
+            let c = `<h2>📦 Umumiy savat (kassa uchun)</h2>`;
+            Object.entries(master).forEach(([n, m]) => {
+                c += `<div class="person-name"><span>${esc(n)} × ${m.qty}</span><span>${fmt(m.sum)} UZS</span></div>`;
+            });
+            c += `<div class="total-row"><span>Jami</span><span>${fmt(total)} UZS</span></div>`;
+            cartBox.innerHTML = c;
+        }
+
+        function updateUI() {
+            const statusEl = document.getElementById('status-display');
+            if (!state) { statusEl.textContent = "Yuklanmoqda…"; tg.MainButton.hide(); return; }
+
+            const me = getMe();
+            const isHost = state.me === state.host_id;
+            const open = state.status === 'open';
+            const active = state.people.filter(p => p.items.length);
+            const allDone = active.length > 0 && active.every(p => p.done);
+
+            renderMenu();
+            renderPeople(open, isHost);
+            renderPayBox(me);
+            document.getElementById('host-panel').hidden = !(open && isHost && allDone);
+
+            let text = '', mode = null, btn = '';
+            if (open) {
+                if (!me) {
+                    text = "Yuklanmoqda…";
+                } else if (isHost && allDone) {
+                    mode = 'pay'; btn = `💳 To'lovga o'tish`; text = "🎉 Hamma tayyor!";
+                } else if (me.done) {
+                    mode = 'edit'; btn = "✏️ Tahrirlash";
+                    const doneCount = active.filter(p => p.done).length;
+                    text = allDone
+                        ? "🎉 Hamma tayyor! Tashkilotchi to'lovni boshlaydi"
+                        : `⏳ Boshqalarni kutyapmiz (${doneCount}/${active.length} tayyor)`;
+                } else if (cartCount() > 0) {
+                    mode = 'ready'; btn = `✅ Tayyor (${fmt(cartTotal())} UZS)`;
+                    text = `Tanlandi: <strong>${cartCount()} taom</strong> (${fmt(cartTotal())} UZS)`;
+                } else {
+                    text = `Savat bo'sh: <strong>0 taom</strong>`;
+                }
+            } else {
+                if (!me) text = "🔒 Buyurtma yopilgan";
+                else if (me.paid) text = "✅ To'landi";
+                else text = `To'lash kerak: <strong>${fmt(personTotal(me))} UZS</strong>`;
+            }
+            statusEl.innerHTML = text;
+            mainMode = mode;
+            if (mode) { tg.MainButton.text = btn; tg.MainButton.show(); }
+            else { tg.MainButton.hide(); }
+        }
+
+        function showMsg(t) {
+            const el = document.getElementById('msg');
+            el.textContent = t;
+            el.hidden = !t;
+        }
+
+        async function sync(extra = {}) {
+            if (!sessionId) { showMsg("Bu sahifa botdagi tugma orqali ochilishi kerak."); return; }
+            const my = ++seq;
+            const body = Object.assign({ session_id: sessionId, initData: tg.initData }, extra);
+            if (loaded && !('items' in extra)) body.items = cartItems();
+            try {
+                const r = await fetch(`${BASE}/api/sync`, {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify(body)
+                });
+                if (r.status === 404) { showMsg("Sessiya topilmadi. Botda yangi gap boshlang."); return; }
                 if (!r.ok) throw new Error();
-                renderBoard(await r.json());
+                const data = await r.json();
+                if (my !== seq) return;
+                showMsg("");
+                state = data;
+                if (!loaded) { loadCounts(data); loaded = true; }
+                updateUI();
             } catch (e) {
-                box.innerHTML = `<h2>👥 Guruh buyurtmalari</h2><div class="empty">Yuklanmoqda… (server uyg'onmoqda, 1 daqiqagacha kuting)</div>`;
+                if (!state) {
+                    document.getElementById('people-box').innerHTML =
+                        `<h2>👥 Ishtirokchilar</h2><div class="empty">Server uyg'onmoqda, 1 daqiqagacha kuting…</div>`;
+                }
             }
         }
 
-        loadBoard();
-        setInterval(loadBoard, 4000);
+        function payMethod(m) { sync({ action: 'pay', method: m }); }
+        function confirmPay(uid) { sync({ action: 'confirm', target: uid }); }
+        function copyCard() {
+            const c = state.card;
+            if (navigator.clipboard && navigator.clipboard.writeText) {
+                navigator.clipboard.writeText(c).then(() => tg.showAlert("📋 Nusxalandi")).catch(() => tg.showAlert(c));
+            } else {
+                tg.showAlert(c);
+            }
+        }
 
         tg.onEvent('mainButtonClicked', function () {
-            if (sending || closed) return;
-            sending = true;
-            tg.MainButton.showProgress();
-
-            fetch(`${BASE}/api/order`, {
-                method: "POST",
-                headers: { "Content-Type": "application/json" },
-                body: JSON.stringify({ session_id: sessionId, initData: tg.initData, items: cart })
-            })
-            .then(r => {
-                if (r.status === 409) throw new Error("closed");
-                if (!r.ok) throw new Error();
-                sending = false;
-                tg.MainButton.hideProgress();
-                tg.HapticFeedback.notificationOccurred('success');
-                tg.showAlert("✅ Buyurtmangiz saqlandi!");
-                loadBoard();
-            })
-            .catch(err => {
-                sending = false;
-                tg.MainButton.hideProgress();
-                tg.showAlert(err.message === "closed" ? "Buyurtma yopilgan" : "Xatolik, qayta urinib ko'ring");
-            });
+            if (mainMode === 'ready') sync({ items: cartItems(), done: true });
+            else if (mainMode === 'edit') sync({ done: false });
+            else if (mainMode === 'pay') sync({ action: 'start_payment', card: document.getElementById('card-input').value });
         });
+
+        sync();
+        setInterval(() => sync(), 3000);
     </script>
 </body>
 </html>
